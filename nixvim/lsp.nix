@@ -21,6 +21,7 @@
             html.enable = true;
             bashls.enable = true;
             pylsp.enable = true;
+			clangd.enable = true;
             kotlin-language-server = {
               enable = true;
               settings = {

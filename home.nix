@@ -23,6 +23,8 @@ in
     oh-my-zsh
     jetbrains.idea-ultimate
     gh
+	cz-cli
+	clang
   ];
 
   programs.thefuck.enable = true;
