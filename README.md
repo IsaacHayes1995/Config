@@ -1,0 +1,2 @@
+# Config
+My nix config
