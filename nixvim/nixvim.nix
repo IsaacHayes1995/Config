@@ -3,7 +3,7 @@
     ./mappings.nix
     ./lsp.nix
     ./ui.nix
-    #./dap.nix
+    ./dap.nix
     ./greeting.nix
     ./window.nix
     ./cmp.nix
@@ -39,9 +39,8 @@
       vim.opt.mouse=""
     '';
 
-    colorschemes.one = {
+    colorschemes.onedark = {
       enable = true;
-      settings.allow_italics = true;
     };
 
     plugins = {
