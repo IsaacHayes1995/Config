@@ -10,7 +10,7 @@ let
   });
 in
 {
-  imports = [ nixvim.homeManagerModules.nixvim ./nixvim/nixvim.nix ];
+  imports = [ ./configs/i3.nix nixvim.homeManagerModules.nixvim ./nixvim/nixvim.nix ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     arandr
