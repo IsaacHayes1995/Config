@@ -13,6 +13,10 @@ in
   imports = [ nixvim.homeManagerModules.nixvim ./nixvim/nixvim.nix ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    arandr
+    kdePackages.qtsvg
+    autorandr
+    busybox
     atool
     nerdfonts
     httpie
@@ -22,13 +26,19 @@ in
     gradle
     oh-my-zsh
     gh
+    feh
     cz-cli
     clang
     jetbrains-toolbox
     gitkraken
-	nodejs
+    nodejs
+    kitty
+    gimp
+    python3
+    rxvt-unicode
+    dolphin
+	polybar
   ];
-
   programs.thefuck.enable = true;
   programs.emacs.enable = true;
 
@@ -36,13 +46,14 @@ in
     enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
-    initExtra = ''      if [ "$TMUX" = "" ]; then tmux; fi;
-              export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk
-    '';
+    initExtra = ''export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
     shellAliases = {
       vi = "nvim";
       switch = "sudo nixos-rebuild switch </dev/null";
       homedit = "vi /home/isaac/Config/home.nix && switch";
+      m = "autorandr --change";
+      drives = "cd /run/media/isaac";
+      o = "xdg-open";
     };
     oh-my-zsh = {
       enable = true;

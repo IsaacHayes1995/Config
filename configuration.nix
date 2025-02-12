@@ -1,21 +1,7 @@
-{ config, pkgs, ... }:
-let
-  # Define the custom Gnome extensions with required workarounds
-  customGnomeExtensions = pkgs.gnomeExtensions // {
-    pop-shell = pkgs.gnomeExtensions.pop-shell.overrideAttrs (p: {
-      postInstall = p.postInstall or "" + ''
-        # Workaround for NixOS/nixpkgs#92265
-        mkdir --parents "$out/share/gsettings-schemas/$name/glib-2.0"
-        ln --symbolic "$out/share/gnome-shell/extensions/pop-shell@system76.com/schemas" "$out/share/gsettings-schemas/$name/glib-2.0/schemas"
-
-        # Workaround for NixOS/nixpkgs#314969
-        mkdir --parents "$out/share/gnome-control-center"
-        ln --symbolic "$src/keybindings" "$out/share/gnome-control-center/keybindings"
-      '';
-    });
-  };
-in
-{
+{ config
+, pkgs
+, ...
+}: {
   imports = [
     <home-manager/nixos>
     <nixos-hardware/microsoft/surface/common>
@@ -24,6 +10,12 @@ in
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  console = {
+    earlySetup = true;
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+    packages = with pkgs; [ terminus_font jetbrains-mono ];
+    keyMap = "us";
+  };
 
   # Networking Configuration
   networking.hostName = "nixos";
@@ -45,8 +37,12 @@ in
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # X11 and Desktop Environment
-services.xserver.displayManager.gdm.enable = true; services.xserver.desktopManager.gnome.enable = true; # Apply the session path workaround services.xserver.desktopManager.gnome.sessionPath = [ customGnomeExtensions.pop-shell ];
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # Keyboard Configuration
   services.xserver.xkb = {
@@ -83,24 +79,21 @@ services.xserver.displayManager.gdm.enable = true; services.xserver.desktopManag
   home-manager.users.isaac = import /home/isaac/Config/home.nix;
 
   # Auto Login
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "isaac";
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  systemd.services."getty@tty1".enable = true;
+  systemd.services."autovt@tty1".enable = true;
 
   # Installed Programs
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
-    nano 
+    nano
     surface-control
     git
     onlyoffice-desktopeditors
-    i3
-    gnome-browser-connector
-    pop-launcher
-    customGnomeExtensions.pop-shell  
+    picom-pijulius
     dbeaver-bin
     gcc
   ];
@@ -112,5 +105,26 @@ services.xserver.displayManager.gdm.enable = true; services.xserver.desktopManag
   environment.shellAliases = {
     nixedit = "sudo nvim /etc/nixos/configuration.nix && sudo nixos-rebuild switch";
   };
-}
 
+  environment.pathsToLink = [ "/libexec" ];
+  services.xserver = {
+    enable = true;
+    autorun = false;
+    desktopManager = {
+      xterm.enable = false;
+    };
+
+    displayManager = {
+      startx.enable = true;
+    };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu #application launcher most people use
+        i3lock #default i3 screen locker
+        i3blocks #if you are planning on using i3blocks over i3status
+		i3status
+      ];
+    };
+  };
+}

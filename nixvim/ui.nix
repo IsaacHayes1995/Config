@@ -39,7 +39,6 @@
       render = "minimal";
     };
 
-
     image.enable = true; # image support
 
     illuminate = {
@@ -76,6 +75,12 @@
     })
   ];
   programs.nixvim.extraConfigLua = ''
-    require('beacon').setup()
+      require('beacon').setup()
+	  vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]]
   '';
 }
