@@ -63,6 +63,7 @@
     wrapping.enable = true;
   };
   programs.nixvim.extraPlugins = [
+    pkgs.vimPlugins.tabout-nvim
     (pkgs.vimUtils.buildVimPlugin {
       # TODO: Add to nixvim plugins
       name = "beacon";
