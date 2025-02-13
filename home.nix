@@ -40,6 +40,7 @@ in
     polybar
     blueberry
     vlc
+	pavucontrol
   ];
   programs.thefuck.enable = true;
   programs.emacs.enable = true;

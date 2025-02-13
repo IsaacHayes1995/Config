@@ -71,6 +71,7 @@
         settings.highlight.multiline = false;
       };
 
+	  ts-autotag.enable = true;
       fugitive.enable = true;
       neogen.enable = true;
       vim-be-good.enable = true;

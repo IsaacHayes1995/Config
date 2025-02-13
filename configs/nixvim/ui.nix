@@ -75,12 +75,15 @@
     })
   ];
   programs.nixvim.extraConfigLua = ''
-      require('beacon').setup()
-	  vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]]
+          require('beacon').setup()
+    require('notify').setup({
+     background_colour = "#000000",
+    })
+    	  vim.cmd [[
+      highlight Normal guibg=none
+      highlight NonText guibg=none
+      highlight Normal ctermbg=none
+      highlight NonText ctermbg=none
+    ]]
   '';
 }

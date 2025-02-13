@@ -47,41 +47,8 @@
         settings.float_opts.border = "curved";
       };
 
-      nvim-tree = {
+      neo-tree = {
         enable = true;
-        git = {
-          enable = true;
-          ignore = false;
-        };
-        renderer = {
-          highlightGit = true;
-          rootFolderLabel = false;
-          indentMarkers = {
-            enable = true;
-            icons = {
-              bottom = "─";
-              edge = "│";
-              corner = "╰";
-            };
-          };
-          icons = {
-            glyphs = {
-              default = "󰈚 ";
-              folder = {
-                default = " ";
-                empty = " ";
-                emptyOpen = " ";
-                open = " ";
-                symlink = " ";
-              };
-              git = {
-                unmerged = "";
-              };
-            };
-          };
-        };
-        view.side = "left";
-        hijackCursor = true;
       };
       bufdelete.enable = true; # Replacement for bdelete that keeps windows intact
     };

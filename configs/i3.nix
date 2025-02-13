@@ -32,6 +32,16 @@
 
       startup = [
         {
+          command = "exec m";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "exec picom";
+          always = false;
+          notification = false;
+        }
+        {
           command = "exec i3-msg workspace 1";
           always = true;
           notification = false;

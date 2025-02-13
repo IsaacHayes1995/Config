@@ -178,14 +178,14 @@
       # Tree
       {
         key = "<Leader>e";
-        action = "<cmd> NvimTreeFocus <CR>";
+        action = "<cmd> Neotree focus <CR>";
         mode = "n";
         options.desc = "Focus tree";
       }
 
       {
         key = "<C-n>";
-        action = "<cmd> NvimTreeToggle <CR>";
+        action = "<cmd> Neotree toggle <CR>";
         mode = "n";
         options.desc = "Toggle tree";
       }
