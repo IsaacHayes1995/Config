@@ -6,12 +6,13 @@
     enable = true;
     package = pkgs.i3-gaps;
     extraConfig = ''
-     default_border pixel 2  
+      default_border pixel 2
     '';
 
     config = rec {
       modifier = "Mod4";
 
+      bars = [ ];
       gaps = {
         inner = 15;
         outer = 5;
@@ -47,8 +48,8 @@
           notification = false;
         }
         {
-          command = "systemctl --user restart polybar.service";
-          always = true;
+          command = "polybar -q -r top & polybar -q -r bottom &";
+          always = false;
           notification = false;
         }
         {

@@ -8,5 +8,6 @@
     ./nixvim/main.nix
     ./kitty.nix
     ./picom.nix
+	./polybar/main.nix
   ];
 }

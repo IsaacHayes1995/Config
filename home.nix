@@ -37,10 +37,9 @@ in
     python3
     rxvt-unicode
     dolphin
-    polybar
     blueberry
     vlc
-	pavucontrol
+    pavucontrol
   ];
   programs.thefuck.enable = true;
   programs.emacs.enable = true;
