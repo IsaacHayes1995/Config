@@ -32,7 +32,7 @@
       relativenumber = true;
     };
 
-    clipboard.providers.wl-copy.enable = true;
+    clipboard.providers.xclip.enable = true;
 
     # Disables the mouse from messing with cursor
     extraConfigLua = ''

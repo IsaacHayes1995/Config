@@ -10,10 +10,11 @@ let
   });
 in
 {
-  imports = [ ./configs/i3.nix nixvim.homeManagerModules.nixvim ./nixvim/nixvim.nix ];
+  imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     arandr
+    xclip
     kdePackages.qtsvg
     autorandr
     busybox
@@ -32,12 +33,13 @@ in
     jetbrains-toolbox
     gitkraken
     nodejs
-    kitty
     gimp
     python3
     rxvt-unicode
     dolphin
-	polybar
+    polybar
+    blueberry
+    vlc
   ];
   programs.thefuck.enable = true;
   programs.emacs.enable = true;
