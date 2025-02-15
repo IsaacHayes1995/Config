@@ -136,7 +136,8 @@ in
       "module/audio" = {
         type = "internal/alsa";
 
-        format-volume = "墳 VOL <label-volume>";
+        format-volume = "VOL <label-volume>";
+        format-volume-prefix = " ";
         format-volume-padding = 1;
         format-volume-foreground = secondary;
         format-volume-background = tertiary;
@@ -146,7 +147,7 @@ in
         format-muted-padding = 1;
         format-muted-foreground = secondary;
         format-muted-background = tertiary;
-        format-muted-prefix = "婢 ";
+        format-muted-prefix = "";
         format-muted-prefix-foreground = urgency;
         format-muted-overline = bg;
 
@@ -156,7 +157,7 @@ in
       "module/battery" = {
         type = "internal/battery";
         full-at = 101; # to disable it
-        battery = "BAT0"; # TODO: Better way to fill this
+        battery = "BAT1"; # TODO: Better way to fill this
         adapter = "AC0";
 
         poll-interval = 2;
@@ -273,7 +274,7 @@ in
 
         interval = 3;
 
-        format = " <label>";
+        format = "  <label>";
         format-background = tertiary;
         format-foreground = secondary;
         format-padding = 1;

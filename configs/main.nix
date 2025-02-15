@@ -4,6 +4,7 @@
 , ...
 }: {
   imports = [
+	./rofi.nix
     ./i3.nix
     ./nixvim/main.nix
     ./kitty.nix
