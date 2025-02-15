@@ -19,7 +19,6 @@ in
     autorandr
     busybox
     atool
-    nerdfonts
     httpie
     inotify-tools
     kotlin
