@@ -17,13 +17,6 @@
       };
       decoration = {
         rounding = 10;
-        shadow = {
-          enabled = "true, glow";
-          range = 25;
-          render_power = 1000;
-          color = "rgba(f38ba8ff)";
-          color_inactive = "rgba(00000000)";
-        };
         blur = {
           enabled = "true, blur";
           size = 1;

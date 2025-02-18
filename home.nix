@@ -14,6 +14,8 @@ in
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     chromium
+	fzf
+	zsh-autocomplete
 	dotnet-sdk
     arandr
     nwg-displays
@@ -52,8 +54,10 @@ in
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
-    enableCompletion = true;
-    initExtra = ''export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
+    enableCompletion = false;
+    initExtra = ''
+	source .nix-profile/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+	export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
     shellAliases = {
       vi = "nvim";
       switch = "sudo nixos-rebuild switch </dev/null";
