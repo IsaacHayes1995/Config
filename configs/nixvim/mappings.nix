@@ -1,5 +1,24 @@
 { ... }: {
   programs.nixvim = {
+    extraConfigLua = ''
+      function ToggleHorizontalTerminal()
+          local terminals = vim.api.nvim_list_bufs()
+          local terminal_found = false
+
+          for _, buf in ipairs(terminals) do
+            if vim.bo[buf].buftype == "terminal" then
+              terminal_found = true
+              break
+            end
+          end
+
+          if terminal_found then
+            vim.cmd("ToggleTermToggleAll")
+          else
+            vim.cmd("ToggleTerm direction=horizontal")
+          end
+        end
+    '';
     keymaps = [
       {
         key = "<esc>";
@@ -111,7 +130,7 @@
 
       {
         key = "<C-x>";
-        action = "<cmd> ToggleTermToggleAll <CR>";
+        action = "<cmd> lua ToggleHorizontalTerminal()<CR>";
         mode = "n";
         options.desc = "Toggle Terminal";
       }

@@ -5,7 +5,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = [ "swww-daemon" "swww img /home/isaac/Pictures/Wallpapers/wallpaper.jpg" ];
+      exec-once = [ "dunst" "swww-daemon" "swww img /home/isaac/Pictures/Wallpapers/wallpaper.jpg" ];
       monitor = [
         "desc:Sharp Corporation LQ144P1JX01 0x340012A0,2400x1600@60,714x1200,1.0"
         "desc:HP Inc. HP E243i CNK0241G1Z,1920x1200@59.95,0x0,1.0"

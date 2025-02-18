@@ -33,7 +33,8 @@
       relativenumber = true;
     };
 
-    clipboard.providers.xsel.enable = true;
+    clipboard.providers.wl-copy.enable = true;
+    clipboard.register = "unnamedplus";
 
     # Disables the mouse from messing with cursor
     extraConfigLua = ''

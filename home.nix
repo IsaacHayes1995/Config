@@ -13,13 +13,16 @@ in
   imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    libnotify
+    wl-clipboard
+    cliphist
     chromium
-	pamixer
-	brightnessctl
-	fzf
-	avizo
-	zsh-autocomplete
-	dotnet-sdk
+    pamixer
+    brightnessctl
+    fzf
+    avizo
+    zsh-autocomplete
+    dotnet-sdk
     arandr
     nwg-displays
     swww
@@ -50,7 +53,7 @@ in
     blueberry
     vlc
     pavucontrol
-	upower
+    upower
     wofi
   ];
   programs.thefuck.enable = true;
@@ -60,10 +63,10 @@ in
     syntaxHighlighting.enable = true;
     enableCompletion = false;
     initExtra = ''
-	source .nix-profile/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-	export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
+      source .nix-profile/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+      export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
     shellAliases = {
-	  bat = "cat /sys/class/power_supply/BAT1/capacity";
+      bat = "cat /sys/class/power_supply/BAT1/capacity";
       vi = "nvim";
       switch = "sudo nixos-rebuild switch </dev/null";
       homedit = "vi /home/isaac/Config/home.nix && switch";
