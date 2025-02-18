@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-	./plugins/csharp.nix
+    ./plugins/csharp.nix
     ./mappings.nix
     ./lsp.nix
     ./ui.nix
@@ -33,7 +33,7 @@
       relativenumber = true;
     };
 
-    clipboard.providers.xclip.enable = true;
+    clipboard.providers.xsel.enable = true;
 
     # Disables the mouse from messing with cursor
     extraConfigLua = ''

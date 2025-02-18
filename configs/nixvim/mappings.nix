@@ -104,9 +104,16 @@
       # Terminal
       {
         key = "<C-x>";
-        action = "<C-\\><C-N>";
+        action = "<cmd> ToggleTermToggleAll <CR>";
         mode = "t";
-        options.desc = "Exit terminal";
+        options.desc = "Toggle Terminal";
+      }
+
+      {
+        key = "<C-x>";
+        action = "<cmd> ToggleTermToggleAll <CR>";
+        mode = "n";
+        options.desc = "Toggle Terminal";
       }
 
       {
