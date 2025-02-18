@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+	./plugins/csharp.nix
     ./mappings.nix
     ./lsp.nix
     ./ui.nix
@@ -12,7 +13,7 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
+
     vimAlias = true;
 
     # Performance
@@ -70,7 +71,6 @@
         };
         settings.highlight.multiline = false;
       };
-
       ts-autotag.enable = true;
       fugitive.enable = true;
       neogen.enable = true;

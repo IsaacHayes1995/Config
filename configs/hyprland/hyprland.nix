@@ -5,8 +5,32 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = [ "waybar" ];
-
+      exec-once = [ "waybar" "swww-daemon" "swww img /home/isaac/Pictures/Wallpapers/wallpaper.jpg" ];
+      monitor = [
+        "desc:Sharp Corporation LQ144P1JX01 0x340012A0,2400x1600@60,714x1200,1.0"
+        "desc:HP Inc. HP E243i CNK0241G1Z,1920x1200@59.95,0x0,1.0"
+        "desc:HP Inc. HP E243i CNK0241G1W,1920x1200@59.95,1920x0,1.0"
+      ];
+      misc = {
+        disable_splash_rendering = true;
+        disable_hyprland_logo = true;
+      };
+      decoration = {
+        rounding = 10;
+        shadow = {
+          enabled = "true, glow";
+          range = 25;
+          render_power = 1000;
+          color = "rgba(f38ba8ff)";
+          color_inactive = "rgba(00000000)";
+        };
+        blur = {
+          enabled = "true, blur";
+          size = 1;
+          passes = 5;
+          vibrancy = "0.1696";
+        };
+      };
       # Keybindings for Hyprland matching i3 default keybinds
       bind = [
         "SUPER, Return, exec, kitty"

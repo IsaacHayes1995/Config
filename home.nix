@@ -13,8 +13,14 @@ in
   imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    chromium
+	dotnet-sdk
     arandr
+    nwg-displays
+    swww
+    cava
     xclip
+    waybar
     kdePackages.qtsvg
     autorandr
     busybox
@@ -39,10 +45,10 @@ in
     blueberry
     vlc
     pavucontrol
+    wofi
   ];
   programs.thefuck.enable = true;
   programs.emacs.enable = true;
-
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;

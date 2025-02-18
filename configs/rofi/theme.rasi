@@ -1,0 +1,101 @@
+* {
+    width: 600;
+    font: "JetBrainsMono Nerd Font 10";
+    background:     #1E1D2FFF;
+    background-alt: #282839FF;
+    foreground:     #89b4fa;
+    selected:       #89b4fa;
+    active:         #89b4fa;
+    urgent:         #89b4fa;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+    border-radius: 20px;
+    font: "JetBrainsMono Nerd Font 14";
+    highlight: none; 
+}
+
+window {
+    border: 3px;
+    border-color: transparent;
+    background-color: #1E1D2FFF;
+    border-radius: 20px;
+    padding: 0px 20px 0px 0px;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+mainbox {
+    background-color: #1E1D2FFF;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: #1E1D2FFF;
+    border-radius: 5px;
+    padding: 2px;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+prompt {
+    enabled: false;
+    background-color: #f38ba8;
+    padding: 5px;
+    text-color: #1E1D2FFF;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+entry {
+    padding: 0px 5px 8px 5px;  
+    margin: 15px 0px 0px 15px;
+    text-color: #f38ba8;
+    background-color: #1E1D2FFF;
+    text-align: center; 
+    line-height: 30px;   
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+listview {
+    border: 0px;
+    padding: 4px 0px 13px;
+    margin: 0px 0px 0px 20px;
+    columns: 1;
+    background-color: #1E1D2FFF;
+    fixed-height: false;
+    lines: 7;
+    border-radius: 0px;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+element {
+    padding: 5px;
+    border-radius: 0px;
+    font: "JetBrainsMono Nerd Font 14";
+    background-color: #1E1D2FFF;
+    text-color: #f38ba8;
+}
+
+element-icon {
+    enabled: false;
+    size: 25px;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+element selected {
+    background-color: #f38ba8;
+    border-radius: 15px;
+    text-color: #1E1D2FFF;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
