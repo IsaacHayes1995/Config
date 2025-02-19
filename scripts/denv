@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+# Ensure shell.nix exists
+if [[ ! -f shell.nix ]]; then
+  echo "{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+  nativeBuildInputs = with pkgs.buildPackages; [];
+}" > shell.nix
+fi
+
+# Extract current packages safely
+current_packages=$(grep -oP '(?<=\[).*(?=\])' shell.nix | tr -d '\n')
+
+# Append new packages without checking
+new_packages="$current_packages $@"
+
+# Update shell.nix
+echo "{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+  nativeBuildInputs = with pkgs.buildPackages; [ ${new_packages} ];
+}" > shell.nix
+
+# Ensure .envrc exists
+echo "use nix" > .envrc
+
+direnv allow
+
+# Notify user
+echo "Updated shell.nix with new packages."

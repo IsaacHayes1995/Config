@@ -8,6 +8,10 @@
     ./hardware-configuration.nix
   ];
 
+  nix.extraOptions = ''
+		experimental-features = flakes nix-command
+	'';
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   console = {
@@ -47,6 +51,25 @@
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+  services.acpid = {
+    enable = true;
+    handlers = {
+      ac-power = {
+        action = ''
+          vals=($1)  # space separated string to array of multiple values
+          case ''${vals[3]} in
+              00000000)
+                  notify-send "unplugged" 
+                  ;;
+              00000001)
+                  notify-send "plugged in" 
+                  ;;
+          esac
+        '';
+        event = "ac_adapter/*";
+      };
+    };
+  };
 
   # Keyboard Configuration
   services.xserver.xkb = {

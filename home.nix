@@ -63,8 +63,10 @@ in
     syntaxHighlighting.enable = true;
     enableCompletion = false;
     initExtra = ''
-      source .nix-profile/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-      export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk'';
+         source .nix-profile/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+         export JAVA_HOME=/nix/store/21j17n0bvs77s4l03xnw5mx70dranl68-openjdk-23.0.1+11/lib/openjdk
+		 export PATH="$PATH:/home/isaac/Config/scripts/"
+    '';
     shellAliases = {
       bat = "cat /sys/class/power_supply/BAT1/capacity";
       vi = "nvim";
