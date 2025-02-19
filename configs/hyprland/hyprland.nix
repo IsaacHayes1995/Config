@@ -26,7 +26,7 @@
       };
       # Keybindings for Hyprland matching i3 default keybinds
       bind = [
-		"SUPER, T, exec, /isaac/Config/scripts/showtime"
+        "SUPER, T, exec, /isaac/Config/scripts/showtime"
         "SUPER, Return, exec, kitty"
         "SUPER, B, exec, firefox"
         "SUPER+Shift, Q, killactive,"

@@ -9,8 +9,8 @@
   ];
 
   nix.extraOptions = ''
-		experimental-features = flakes nix-command
-	'';
+    experimental-features = flakes nix-command
+  '';
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -59,10 +59,10 @@
           vals=($1)  # space separated string to array of multiple values
           case ''${vals[3]} in
               00000000)
-                  notify-send "unplugged" 
+                  notify-send "unplugged"
                   ;;
               00000001)
-                  notify-send "plugged in" 
+                  notify-send "plugged in"
                   ;;
           esac
         '';
