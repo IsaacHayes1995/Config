@@ -77,6 +77,6 @@
       neogen.enable = true;
       vim-be-good.enable = true;
     };
-    extraPlugins = [ pkgs.vimPlugins.nvzone-typr ];
+    extraPlugins = [pkgs.vimPlugins.firenvim pkgs.vimPlugins.nvzone-typr ];
   };
 }
