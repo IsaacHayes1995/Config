@@ -84,6 +84,7 @@
         enableTelescope = true;
       };
     };
+
     extraPlugins = [ pkgs.vimPlugins.firenvim pkgs.vimPlugins.nvzone-typr ];
   };
 }
