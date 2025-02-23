@@ -29,6 +29,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  programs.nix-ld.enable = true;
   # Time Zone
   time.timeZone = "Australia/Melbourne";
   # Internationalisation Settings
