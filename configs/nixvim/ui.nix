@@ -64,19 +64,8 @@
   };
   programs.nixvim.extraPlugins = [
     pkgs.vimPlugins.tabout-nvim
-    (pkgs.vimUtils.buildVimPlugin {
-      # TODO: Add to nixvim plugins
-      name = "beacon";
-      src = pkgs.fetchFromGitHub {
-        owner = "DanilaMihailov";
-        repo = "beacon.nvim";
-        rev = "v2.0.0";
-        hash = "sha256-w5uhTVYRgkVCbJ5wrNTKs8bwSpH+4REAr9gaZrbknH8=";
-      };
-    })
   ];
   programs.nixvim.extraConfigLua = ''
-          require('beacon').setup()
     require('notify').setup({
      background_colour = "#000000",
     })

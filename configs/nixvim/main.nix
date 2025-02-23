@@ -76,7 +76,14 @@
       fugitive.enable = true;
       neogen.enable = true;
       vim-be-good.enable = true;
+      auto-session = {
+        enable = true;
+      };
+      project-nvim = {
+        enable = true;
+        enableTelescope = true;
+      };
     };
-    extraPlugins = [pkgs.vimPlugins.firenvim pkgs.vimPlugins.nvzone-typr ];
+    extraPlugins = [ pkgs.vimPlugins.firenvim pkgs.vimPlugins.nvzone-typr ];
   };
 }
