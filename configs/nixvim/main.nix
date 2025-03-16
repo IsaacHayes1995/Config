@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./plugins/rzls.nix
     ./plugins/csharp.nix
     ./mappings.nix
     ./lsp.nix
@@ -13,6 +14,7 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+    colorschemes.onedark.enable = true;
 
     vimAlias = true;
 
@@ -38,12 +40,9 @@
 
     # Disables the mouse from messing with cursor
     extraConfigLua = ''
-      vim.opt.mouse=""
+         vim.opt.mouse=""
+      require("easy-dotnet").setup()
     '';
-
-    colorschemes.onedark = {
-      enable = true;
-    };
 
     plugins = {
       todo-comments = {

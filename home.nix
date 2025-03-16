@@ -18,10 +18,8 @@ in
     wl-clipboard
     cliphist
     chromium
-    pamixer
     brightnessctl
     fzf
-    avizo
     zsh-autocomplete
     dotnet-sdk
     arandr

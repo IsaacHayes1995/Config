@@ -48,6 +48,7 @@
       inc-rename.enable = true; # Nice renaming UI
     };
 
+	extraPlugins = with pkgs.vimPlugins; [easy-dotnet-nvim];
     # Ability to toggle cmp
     extraConfigLua = ''
                   local format_enabled = true
