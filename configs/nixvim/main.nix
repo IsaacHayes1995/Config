@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
-    ./plugins/rzls.nix
-    ./plugins/csharp.nix
+		#    ./plugins/rzls.nix
+		# ./plugins/csharp.nix
     ./mappings.nix
     ./lsp.nix
     ./ui.nix

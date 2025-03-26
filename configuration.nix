@@ -97,7 +97,7 @@
     createHome = true;
     home = "/home/isaac";
     description = "Isaac Hayes";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" "docker" ];
+    extraGroups = [ "dialout" "wheel" "audio" "video" "networkmanager" "docker" ];
     useDefaultShell = true;
   };
 
