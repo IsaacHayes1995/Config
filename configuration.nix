@@ -1,5 +1,7 @@
 { config
 , pkgs
+, lib
+, cfg
 , ...
 }: {
   imports = [
@@ -11,7 +13,7 @@
   nix.extraOptions = ''
     experimental-features = flakes nix-command
   '';
-
+  services.udev.packages = [ pkgs.apio-udev-rules ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   console = {
@@ -125,6 +127,7 @@
     picom-pijulius
     dbeaver-bin
     gcc
+	apio
   ];
 
   # System State Version

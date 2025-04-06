@@ -48,13 +48,14 @@ in
     gimp
     python3
     rxvt-unicode
-    dolphin
+    kdePackages.dolphin
     blueberry
     vlc
     pavucontrol
     upower
     wofi
   ];
+
   programs.thefuck.enable = true;
   programs.emacs.enable = true;
   programs.zsh = {
