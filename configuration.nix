@@ -149,5 +149,6 @@
     displayManager = {
       startx.enable = true;
     };
+	desktopManager.gnome.enable = true;
   };
 }
