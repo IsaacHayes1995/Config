@@ -27,6 +27,7 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  virtualisation.docker.enable = true;
   # Networking Configuration
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -127,8 +128,11 @@
     picom-pijulius
     dbeaver-bin
     gcc
-	apio
+    apio
   ];
+  environment.sessionVariables = {
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
+  };
 
   # System State Version
   system.stateVersion = "24.11";
@@ -149,6 +153,6 @@
     displayManager = {
       startx.enable = true;
     };
-	desktopManager.gnome.enable = true;
+    desktopManager.gnome.enable = true;
   };
 }
