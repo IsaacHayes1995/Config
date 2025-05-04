@@ -13,6 +13,8 @@ in
   imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+	gnome-tweaks
+	gnomeExtensions.tweaks-in-system-menu
 	sweethome3d.application
 	balena-cli
     spotify-player
