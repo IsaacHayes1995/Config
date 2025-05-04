@@ -100,7 +100,7 @@
     createHome = true;
     home = "/home/isaac";
     description = "Isaac Hayes";
-    extraGroups = [ "dialout" "wheel" "audio" "video" "networkmanager" "docker" ];
+    extraGroups = [ "adbusers" "dialout" "wheel" "audio" "video" "networkmanager" "docker" ];
     useDefaultShell = true;
   };
 
@@ -133,6 +133,10 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
   };
+  programs.adb.enable = true;
+
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
 
   # System State Version
   system.stateVersion = "24.11";
