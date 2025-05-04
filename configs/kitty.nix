@@ -7,6 +7,7 @@
     shellIntegration.enableZshIntegration = true;
     settings = {
       background_opacity = 0.8;
+	  confirm_os_window_close = 0;
 
       # The basic colors
       foreground = "#979eab";
