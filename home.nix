@@ -13,6 +13,10 @@ in
   imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+	mkdocs
+    ifuse
+	libimobiledevice
+	digikam
 	gnome-tweaks
 	gnomeExtensions.tweaks-in-system-menu
 	sweethome3d.application
@@ -51,7 +55,6 @@ in
     gimp
     python3
     rxvt-unicode
-    kdePackages.dolphin
     blueberry
     vlc
     pavucontrol
