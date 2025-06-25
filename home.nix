@@ -13,6 +13,9 @@ in
   imports = [ ./configs/main.nix nixvim.homeManagerModules.nixvim ];
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+	libpng
+	flutterPackages-source.stable
+	vscode
 	mkdocs
     ifuse
 	libimobiledevice
